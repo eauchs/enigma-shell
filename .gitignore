@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Production
+dist/
+build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env*.local
+.env*.production
+.env*.development
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Vite
+.vite/
+coverage/
+# Peut-être d'autres fichiers spécifiques à votre build Vite
+public/v86/v86.wasm
+public/v86/seabios.bin
+public/v86/vgabios.bin
+./public/images/alpine-minimal.iso
+./public/images/alpine-standard-3.21.3-x86.iso

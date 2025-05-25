@@ -1,0 +1,47 @@
+public/images/*.iso filter=lfs diff=lfs merge=lfs -text
+
+# Dépendances
+node_modules/
+
+# Fichiers de build et de production
+dist/
+build/
+.vite/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Variables d'environnement locales
+.env
+.env*.local
+.env*.production
+.env*.development
+# !.env.example # Décommentez si vous avez un fichier d'exemple
+
+# Fichiers d'IDE et d'éditeurs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Fichiers générés par l'OS
+.DS_Store
+Thumbs.db
+
+# Fichiers volumineux de l'émulateur (à ne pas versionner)
+public/images/*.iso
+public/v86/*.wasm
+public/v86/*.bin
+# public/v86/libv86.js # Décommentez si vous ne voulez pas versionner libv86.js non plus
+
+# Autres
+coverage/

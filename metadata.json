@@ -1,0 +1,5 @@
+{
+  "name": "Enigma Shell",
+  "description": "A calculator facade that unlocks a simulated shell interface. This is a frontend proof-of-concept for the Enigma Shell project.",
+  "requestFramePermissions": []
+}
