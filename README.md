@@ -48,15 +48,7 @@ L'interface du shell permet à l'utilisateur d'interagir avec une IA locale pour
     *Vous pouvez généralement trouver les fichiers `v86.wasm`, `seabios.bin`, et `vgabios.bin` dans les dépôts ou les builds du projet v86. `libv86.js` est également fourni par le projet v86.*
     *Pour l'image ISO d'Alpine Linux, téléchargez-la depuis le site officiel d'Alpine Linux (utilisez une version minimale ou standard pour x86).*
 
-4.  **Configurez votre clé API Gemini (si nécessaire pour une fonctionnalité future) :**
-    Le fichier `README.md` original mentionne une clé API Gemini. Si vous prévoyez d'utiliser des services Gemini directement, assurez-vous de configurer `GEMINI_API_KEY` dans un fichier `.env.local` à la racine du projet :
-    ```
-    GEMINI_API_KEY=VOTRE_CLE_API_GEMINI
-    ```
-    Le `vite.config.ts` est configuré pour charger cette variable.
-    *Note : L'interaction actuelle du shell utilise un endpoint LLM local (`http://localhost:1234/v1/`) et ne semble pas utiliser directement la clé Gemini pour cette partie.*
-
-5.  **Lancez l'application en mode développement :**
+4.  **Lancez l'application en mode développement :**
     ```bash
     npm run dev
     ```
