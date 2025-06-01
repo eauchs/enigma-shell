@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enigma Shell</title>
+
+  <script>
+    if (typeof global === 'undefined' && typeof window !== 'undefined') {
+      window.global = window;
+    }
+    if (typeof global !== 'undefined' && typeof global.setImmediate === 'undefined') {
+      global.setImmediate = function(callback) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return setTimeout(function() {
+          callback.apply(null, args);
+        }, 0);
+      };
+    }
+    if (typeof global !== 'undefined' && typeof global.clearImmediate === 'undefined') {
+      global.clearImmediate = function(id) {
+        clearTimeout(id);
+      };
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Vos styles CSS ici */
+    body {
+      font-family: 'Orbitron', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1a202c; }
+    ::-webkit-scrollbar-thumb { background: #38b2ac; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4fd1c5; }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .font-roboto-mono { font-family: 'Roboto Mono', monospace; }
+    .neon-text-green { color: #68D391; text-shadow: 0 0 5px #68D391, 0 0 10px #68D391, 0 0 15px #31C48D; }
+    .neon-box-shadow-green { box-shadow: 0 0 5px #68D391, 0 0 10px #68D391, 0 0 15px #31C48D; }
+    .neon-border-green { border-color: #68D391; }
+    .button-active-glow-green:active { box-shadow: 0 0 10px #68D391, 0 0 20px #68D391, 0 0 30px #31C48D, inset 0 0 5px #31C48D; }
+    .neon-border-purple-500 { border-color: #9f7aea; }
+    .neon-box-shadow-purple-500 { box-shadow: 0 0 5px #9f7aea, 0 0 10px #9f7aea, 0 0 15px #805ad5; }
+    .text-purple-300 { color: #b794f4; }
+    .text-cyan-300 { color: #4fd1c5; }
+    .neon-border-cyan-500 { border-color: #38b2ac; }
+    .scrollbar-thin { scrollbar-width: thin; scrollbar-color: #4a5568 #1a202c; }
+    .scrollbar-thumb-slate-700::-webkit-scrollbar-thumb { background-color: #4a5568; border-radius: 4px; }
+    .scrollbar-thumb-slate-700::-webkit-scrollbar-thumb:hover { background-color: #718096; }
+    .scrollbar-track-slate-800::-webkit-scrollbar-track { background-color: #1a202c; }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+
+  <script src="/v86/libv86.js"></script> 
+  </head>
+<body class="bg-slate-900">
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+</html>
