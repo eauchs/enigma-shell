@@ -1,77 +1,77 @@
 
 # Enigma Shell 🔮
 
-Contrôlez un système d'exploitation Linux complet avec le langage naturel, directement dans votre navigateur.
+Control a full Linux operating system with natural language, directly in your browser.
 
-## 🚀 À propos du projet
+## 🚀 About This Project
 
-**Enigma Shell** est une interface web expérimentale qui vous permet de dialoguer avec un système d'exploitation. Au lieu de taper des commandes shell complexes, vous décrivez simplement ce que vous voulez faire en français.
+**Enigma Shell** is an experimental web interface that lets you talk to an operating system. Instead of typing complex shell commands, you simply describe what you want to do in plain English.
 
-Ce projet fusionne deux technologies de pointe :
+This project merges two cutting-edge technologies:
 
-  * **v86 :** Un émulateur x86 écrit en JavaScript qui fait tourner une image complète d'**Alpine Linux** avec son propre noyau et système de fichiers, directement dans votre navigateur.
-  * **Ollama :** Un client qui se connecte à votre instance locale d'Ollama pour utiliser des LLMs (comme Llama 3, Mistral, etc.) afin de traduire vos instructions en langage naturel en commandes `bash` exécutables.
+  * **v86:** An x86 emulator written in JavaScript that runs a full **Alpine Linux** image—complete with its own kernel and file system—directly in your browser.
+  * **Ollama:** A client that connects to your local Ollama instance to use LLMs (like Llama 3, Mistral, etc.) to translate your natural language instructions into executable `bash` commands.
 
-Le résultat est une expérience fluide et intuitive où le LLM devient votre ingénieur système personnel, pilotant une VM sous vos yeux.
+The result is a fluid and intuitive experience where the LLM becomes your personal systems engineer, driving a VM right before your eyes.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-  * **Environnement Linux Complet :** Une véritable VM Alpine Linux virtualisée, pas une simulation.
-  * **Contrôle en Langage Naturel :** Donnez des ordres comme "crée un dossier appelé 'projets' et entre dedans" ou "dis-moi la version du noyau".
-  * **100% Côté Client :** Toute la logique de l'application tourne dans votre navigateur, assurant réactivité et confidentialité.
-  * **LLM Local :** Utilise votre propre instance Ollama, gardant vos données et vos prompts privés.
-  * **Interface Réactive :** Développé avec React, TypeScript et Vite pour une expérience utilisateur moderne et performante.
+  * **Full Linux Environment:** A true, virtualized Alpine Linux VM, not a simulation.
+  * **Natural Language Control:** Give commands like "create a folder named 'projects' and enter it" or "tell me the kernel version."
+  * **100% Client-Side:** All application logic runs in your browser, ensuring responsiveness and privacy.
+  * **Local LLM:** Uses your own Ollama instance, keeping your data and prompts private.
+  * **Reactive UI:** Built with React, TypeScript, and Vite for a modern and high-performance user experience.
 
-## 🛠️ Stack Technique
+## 🛠️ Tech Stack
 
-  * **Frontend :** React, TypeScript, Vite
-  * **Émulation de VM :** [v86](https://github.com/copy/v86)
-  * **Interaction LLM :** [ollama-js](https://github.com/ollama/ollama-js) (client officiel)
+  * **Frontend:** React, TypeScript, Vite
+  * **VM Emulation:** [v86](https://github.com/copy/v86)
+  * **LLM Interaction:** [ollama-js](https://github.com/ollama/ollama-js) (Official Client)
 
-## ⚙️ Prérequis
+## ⚙️ Prerequisites
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés et en cours d'exécution sur votre machine :
+Before you begin, ensure you have the following installed and running on your machine:
 
-1.  **Node.js** (v18 ou supérieur)
-2.  **Ollama :** [Téléchargez et installez Ollama](https://ollama.com/).
-3.  **Un modèle LLM :** Tirez un modèle adapté aux instructions comme qwen3-4b
+1.  **Node.js** (v18 or higher)
+2.  **Ollama:** [Download and install Ollama](https://ollama.com/).
+3.  **An LLM Model:** Pull an instruction-tuned model, e.g., `ollama pull qwen:4b`
 
-## ▶️ Installation & Lancement
+## ▶️ Installation & Launch
 
-1.  **Clonez le dépôt :**
+1.  **Clone the repository:**
     ```bash
     git clone https://github.com/eauchs/enigma-shell.git
     cd enigma-shell
     ```
-2.  **Installez les dépendances :**
+2.  **Install dependencies:**
     ```bash
     npm install
     ```
-3.  **Lancez l'application :**
+3.  **Run the application:**
     ```bash
     npm run dev
     ```
-4.  Ouvrez votre navigateur à l'adresse indiquée (généralement `http://localhost:5173`).
+4.  Open your browser to the provided address (usually `http://localhost:5173`).
 
-Assurez-vous que l'application Ollama est bien lancée en arrière-plan avant de démarrer le serveur de développement.
+Ensure the Ollama application is running in the background before starting the development server.
 
-## ✍️ Utilisation
+## ✍️ Usage
 
-Une fois l'application chargée, la VM Alpine Linux va démarrer. Attendez que le processus de boot soit terminé et que le prompt de login apparaisse.
+Once the application loads, the Alpine Linux VM will boot up. Wait for the boot process to complete and for the login prompt to appear.
 
-1.  Utilisez le champ de saisie principal pour écrire votre objectif en langage naturel.
-2.  Appuyez sur "Entrée".
-3.  Observez le LLM taper et exécuter la commande correspondante dans le terminal de la VM.
+1.  Use the main input field to write your objective in natural language.
+2.  Press "Enter".
+3.  Watch as the LLM types and executes the corresponding command in the VM's terminal.
 
-## 🛣️ Roadmap (Idées d'évolutions)
+## 🛣️ Roadmap (Future Ideas)
 
-Enigma Shell est une base solide. Voici quelques pistes pour le faire passer au niveau supérieur :
+Enigma Shell is a solid foundation. Here are a few ideas to take it to the next level:
 
-  * **Planification Multi-Étapes :** Intégrer un framework comme **CrewAI** (via un backend Python communiquant en WebSocket) pour permettre à une équipe d'agents de poursuivre des objectifs complexes sur plusieurs commandes (ex: "installe un serveur Nginx et déploie ce site web").
-  * **Persistance de l'État :** Permettre de sauvegarder l'état du disque de la VM dans le `localStorage` ou `IndexedDB` pour reprendre une session là où vous l'avez laissée.
-  * **Téléversement de Fichiers :** Ajouter la possibilité d'uploader des fichiers depuis la machine hôte vers le système de fichiers de la VM.
-  * **Choix du Modèle :** Permettre à l'utilisateur de choisir le modèle Ollama à utiliser directement depuis l'interface.
+  * **Multi-Step Planning:** Integrate a framework like **CrewAI** (via a Python backend communicating over WebSockets) to allow a team of agents to pursue complex, multi-command objectives (e.g., "install an Nginx server and deploy this website").
+  * **State Persistence:** Allow the VM's disk state to be saved in `localStorage` or `IndexedDB` to resume a session where you left off.
+  * **File Uploads:** Add the ability to upload files from the host machine into the VM's file system.
+  * **Model Selection:** Allow the user to choose which Ollama model to use directly from the UI.
 
-## 📄 Licence
+## 📄 License
 
-Ce projet est distribué sous la licence MIT. Voir le fichier `LICENSE` pour plus d'informations.
+This project is distributed under the MIT License. See the `LICENSE` file for more information.
